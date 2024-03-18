@@ -117,6 +117,15 @@ h1 {
   height: 3rem;
   cursor: pointer;
 }
+.DivDate:hover {
+  background-color: rgb(184, 128, 162);
+}
+
+.DivDate:active {
+  background-color: rgb(88, 35, 67);
+  box-shadow: 0 5px #3c3c3c;
+  transform: translateY(4px);
+}
 .PrinciplDateDiv {
   margin-left: 0.8rem;
 }
