@@ -1,7 +1,7 @@
-import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import PropTypes from "prop-types";
 
 export const Todo = ({ task, handleDelete, editTodo, toggleComplete }) => {
   return (
@@ -28,5 +28,15 @@ export const Todo = ({ task, handleDelete, editTodo, toggleComplete }) => {
       </div>
     </div>
   );
+};
+Todo.propTypes = {
+  task: PropTypes.shape({
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    todo: PropTypes.string,
+    completed: PropTypes.bool,
+  }),
+  handleDelete: PropTypes.func.isRequired,
+  editTodo: PropTypes.func.isRequired,
+  toggleComplete: PropTypes.func,
 };
 export default Todo;

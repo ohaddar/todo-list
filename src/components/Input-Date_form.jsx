@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
-import React from "react";
 import { v4 as uuidv4 } from "uuid";
+import PropTypes from "prop-types";
 
 function InputDateForm({ addTodo }) {
   const { register, handleSubmit, reset } = useForm();
@@ -21,4 +21,7 @@ function InputDateForm({ addTodo }) {
     />
   );
 }
+InputDateForm.propTypes = {
+  addTodo: PropTypes.func,
+};
 export default InputDateForm;

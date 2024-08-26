@@ -1,11 +1,10 @@
 import Todo from "./Todo";
 import EditTodoForm from "./EditTodoForm";
-import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
 function TodoList({ todoList, setTodoList, todos }) {
   const handleDelete = (id) => {
     const updatedList = todoList.filter((todo) => todo.id !== id);
-    console.log("after delete", updatedList);
     setTodoList(updatedList);
   };
   const handleModify = (todo, id) => {
@@ -54,4 +53,23 @@ function TodoList({ todoList, setTodoList, todos }) {
     </div>
   );
 }
+TodoList.propTypes = {
+  todoList: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      todo: PropTypes.string,
+      isEditing: PropTypes.bool,
+      completed: PropTypes.bool,
+    })
+  ),
+  setTodoList: PropTypes.func,
+  todos: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      todo: PropTypes.string,
+      isEditing: PropTypes.bool,
+      completed: PropTypes.bool,
+    })
+  ),
+};
 export default TodoList;

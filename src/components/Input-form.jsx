@@ -1,7 +1,6 @@
-import { useState } from "react";
 import { useForm } from "react-hook-form";
-import React from "react";
 import { v4 as uuidv4 } from "uuid";
+import PropTypes from "prop-types";
 
 function InputForm({ todoList, setTodoList }) {
   const {
@@ -45,4 +44,9 @@ function InputForm({ todoList, setTodoList }) {
     </form>
   );
 }
+InputForm.propTypes = {
+  todoList: PropTypes.array,
+  setTodoList: PropTypes.func,
+};
+
 export default InputForm;
