@@ -54,13 +54,15 @@ function App() {
               </div>
             ))}
         </div>
-        <TodoList
-          todos={todos}
-          todoList={todoList}
-          setTodoList={setTodoList}
-          dateMode={dateMode}
-          setDateMode={setDateMode}
-        />
+        {todoList && (
+          <TodoList
+            todos={todos}
+            todoList={todoList}
+            setTodoList={setTodoList}
+            dateMode={dateMode}
+            setDateMode={setDateMode}
+          />
+        )}
       </div>
     </div>
   );

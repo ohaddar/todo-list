@@ -57,7 +57,7 @@ TodoList.propTypes = {
   todoList: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-      todo: PropTypes.string,
+      todo: PropTypes.string.isRequired,
       isEditing: PropTypes.bool,
       completed: PropTypes.bool,
     })
