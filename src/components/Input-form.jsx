@@ -9,6 +9,7 @@ function InputForm({ todoList, setTodoList }) {
     reset,
     formState: { errors },
   } = useForm();
+  const today = new Date().toISOString().split("T")[0];
 
   const onSubmit = (data) => {
     data.id = uuidv4();
@@ -25,6 +26,7 @@ function InputForm({ todoList, setTodoList }) {
         id={uuidv4()}
         className="Todo-input"
         {...register("date", { required: true })}
+        min={today}
       />
       {errors.date && <p>Ce champ est requis.</p>}
 
